@@ -1,0 +1,26 @@
+import string
+
+key= "zebraistpdcfghjklmnoquwvxy" 
+#Encryption
+plaintext=input("Enter Plaintext: ")
+cipher= ""
+for i in plaintext:
+ 
+    if i in string.ascii_lowercase: 
+        index = ord(i) - ord('a') 
+        cipher = cipher + key[index]
+    else:
+        cipher = cipher + i 
+print("Plaintext: " + plaintext) 
+print("Ciphertext: " + cipher)
+
+#Decryption
+plain=input("Enter the Ciphertext: ") 
+plaintxt= ""
+for c in plain:
+    if c in string.ascii_lowercase: 
+        index = key.find(c)
+        plaintxt += chr(index + ord('a')) 
+    else:
+        plaintxt = plaintxt + c 
+print("Plaintext: " + plaintext)
